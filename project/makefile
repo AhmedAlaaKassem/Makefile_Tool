@@ -19,4 +19,7 @@ $(link_target) : $(object_files)
 	
 clean :
 	del $(clean_target)
+
+compile :
+	make_S $(object_files)
 	
