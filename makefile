@@ -4,10 +4,11 @@ vpath %.o ./dependancies
 vpath %.h ./inc
 cc = gcc_S  
 object_files = code.o main.o DIO.o LCD.o
+builddir := dependancies
 include_path = ./inc 
 dependancies_path = ./dependancies
 link_target = app.exe
-clean_target = $(dependancies_path)/*.o $(link_target)
+clean_target = $(link_target) $(builddir)
 
 all : $(link_target)
 
@@ -18,8 +19,7 @@ $(link_target) : $(object_files)
 	$(cc) -c -I$(include_path) $< -o $(dependancies_path)/$@
 	
 clean :
-	del $(clean_target)
+	del $(clean_target) 
 
 compile :
 	make_S $(object_files)
-	
