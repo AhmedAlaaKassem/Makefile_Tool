@@ -2,5 +2,5 @@
 
 void printMessage()
 {
-	printf("saba7 alol <3");
+	printf("test");
 }
